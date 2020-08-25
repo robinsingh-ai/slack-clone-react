@@ -1,0 +1,9 @@
+body {
+  --MainColorSlack: #350d36;
+  overflow: hidden;
+}
+
+.App__body {
+  display: flex;
+  height: 100vh;
+}
