@@ -3,11 +3,6 @@ import "./SIdebarOption.css";
 import { useHistory } from "react-router-dom";
 import Database from "../firebase";
 
-// SO 1. changes url when we click on the channel itself coz when we click it changes id and that id is we are using here
-
-//2.then it coonnets to the database
-// 3.uses URL param (room id) to fetch room details fromfrom the database
-
 function SideBarOptions({ Icon, title, id, addChannelOption }) {
   const history = useHistory();
 

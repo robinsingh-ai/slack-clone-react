@@ -18,21 +18,16 @@ function Header() {
           src={user?.photoURL}
         />
         <AccessTimeIcon />
-        {/* avatar icon */}
-        {/* timeicon */}
       </div>
 
       <div className="header__middle">
-        {/* search icon */}
         <SearchIcon />
-        {/* input tag */}
+
         <input placeholder="Hello Robin Singh" />
       </div>
 
       <div className="header__right">
-        {/* help icon */}
         <HelpOutlineIcon />
-        {/* last section of hearer */}
       </div>
     </div>
   );

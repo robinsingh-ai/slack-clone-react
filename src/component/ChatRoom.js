@@ -9,21 +9,15 @@ import ChatInput from "./ChatInput";
 function ChatRoom() {
   const { roomId } = useParams();
   const [roomDetals, setroomDetals] = useState(null);
-  const [roomMessage, SetroomMessgae] = useState([]); //this should always been arrauy
+  const [roomMessage, SetroomMessgae] = useState([]);
 
   useEffect(() => {
-    //so here use effect function will get all the deatklas of the selcted channel from the given id that has been passed from the sidebar .js in form of [roomId]
     if (roomId) {
       Database.collection("rooms")
-        .doc(roomId) //doc function will get the room by passing the [roomId] to get desired room info
-        .onSnapshot(
-          (snapshot) =>
-            //here we wil fetch that room id's detals using snapshot and will store all the detals in the roomDetals
-            setroomDetals(snapshot.data()) //here data is a inbulit function of firebase where when we have all the details from that room then data will store all the collection and fields data in setroomDetals in form of an objectfor more info hover over data
-        );
+        .doc(roomId)
+        .onSnapshot((snapshot) => setroomDetals(snapshot.data()));
     }
-    //below function is the most imp function
-    //this function is using the room id to get all the info in terms of object array that has been there in the data base
+
     Database.collection("rooms")
       .doc(roomId)
       .collection("messages")
@@ -33,16 +27,15 @@ function ChatRoom() {
       );
   }, [roomId]);
 
-  console.log(roomDetals); //for printing to check if details are right or wrong
+  console.log(roomDetals);
   console.log(roomMessage);
   return (
     <div className="chat">
-      {/* <h1>You Are In the {roomId} room</h1> */}
       <div className="chat__header">
         <div className="chat__headerleft">
           <h3 className="chat__channelname">
             <strong># {roomDetals?.name}</strong>
-            {/* always use ? when using objects to protect code from crashing */}
+
             <StarBorderIcon />
           </h3>
         </div>

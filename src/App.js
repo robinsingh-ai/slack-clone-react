@@ -17,11 +17,9 @@ function App() {
           <Login />
         ) : (
           <>
-            {/* always use react fragment when there are two div or components one by one  */}
             <Header />
 
             <div className="App__body">
-              {/* sidebar */}
               <SideBar />
               <Switch>
                 <Route path="/room/:roomId">
@@ -31,8 +29,6 @@ function App() {
                   <h1>Welcome Screen</h1>
                 </Route>
               </Switch>
-
-              {/* react router */}
             </div>
           </>
         )}

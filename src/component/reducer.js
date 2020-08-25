@@ -1,5 +1,3 @@
-//All files like stateprovider and reducerjs and smaal part in index.js is important for context api thing
-
 export const initialState = {
   user: null,
 };

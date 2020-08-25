@@ -20,14 +20,11 @@ function SideBar() {
   const [{ user }] = useStateValue();
 
   useEffect(() => {
-    //Run This code when side bar componnent  loads
     Database.collection("rooms").onSnapshot((snapshot) =>
-      //so when ever anything in the database changes or modified then this will take a snapshot with realtime to get us upaated
       SetChannel(
         snapshot.docs.map((doc) => ({
-          //Can loop to each document in the rooms database which is served as channel with the help of docs.map :25
-          id: doc.id, //with this line it will give the document's id like "XERout26DDYnfhfucfmcsiq"
-          name: doc.data().name, // this line will give all the data in that document with that documents collection and the name of that data in our case it has been consdered as the channel name
+          id: doc.id,
+          name: doc.data().name,
         }))
       )
     );
@@ -67,8 +64,6 @@ function SideBar() {
       {Channels.map((channel) => (
         <SideBarOptions title={channel.name} id={channel.id} />
       ))}
-
-      {/* Connecting  DB for adding Channels name and infos */}
     </div>
   );
 }

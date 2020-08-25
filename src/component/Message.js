@@ -6,7 +6,6 @@ function Message({ message, timestamp, user, userimg }) {
       <img src={userimg} alt="profile pic" />
       <div className="message__data">
         <h4>
-          {/* use the above line method to get timestamp in best way */}
           {user}{" "}
           <span className="message__timestamp">
             {new Date(timestamp?.toDate()).toUTCString()}
