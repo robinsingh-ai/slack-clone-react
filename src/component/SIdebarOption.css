@@ -1,0 +1,24 @@
+.sidebaroptions {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 7px;
+  cursor: pointer;
+  padding: 6px 0px;
+}
+.sidebaroptions:hover {
+  background-color: rgb(134, 14, 130);
+}
+.sidebaroptions__icon {
+  padding: 0px 12px;
+}
+
+.sidebaroptions__channel {
+  padding: 7px 12px;
+  font-size: 15px;
+}
+
+.sidebaroption__chaanelicon {
+  padding-right: 15px;
+  padding-left: 7px;
+}
